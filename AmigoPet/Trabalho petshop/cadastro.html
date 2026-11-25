@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | Amigo Pet</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <p class="marca">🐾 Amigo Pet <span>Sistema de Pet Shop</span></p>
+    <nav aria-label="Menu principal">
+      <a href="cadastro.html" class="ativo" aria-current="page">Cadastro</a>
+      <a href="relatorio.html">Relatório</a>
+      <a href="index.html">Sair</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cartao">
+      <h1>Cadastro de animais atendidos</h1>
+      <p class="dica">Os campos com * são obrigatórios.</p>
+
+      <p id="salvo" class="aviso">Campos conferidos! Versão demonstrativa: nada é salvo.</p>
+
+      <form action="cadastro.html#salvo">
+        <fieldset>
+          <legend>Dados do animal</legend>
+          <div class="grade">
+            <div>
+              <label for="nome">Nome do animal *</label>
+              <input type="text" id="nome" maxlength="60" required>
+            </div>
+            <div>
+              <label for="especie">Espécie *</label>
+              <select id="especie" required>
+                <option value="">Selecione...</option>
+                <option>Cachorro</option>
+                <option>Gato</option>
+                <option>Ave</option>
+                <option>Coelho</option>
+                <option>Hamster</option>
+              </select>
+            </div>
+            <div>
+              <label for="raca">Raça</label>
+              <input type="text" id="raca" maxlength="60">
+            </div>
+            <div>
+              <label for="nascimento">Data de nascimento</label>
+              <input type="date" id="nascimento">
+            </div>
+            <div>
+              <label for="cadastro">Data de cadastro *</label>
+              <input type="date" id="cadastro" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dados do tutor</legend>
+          <div class="grade">
+            <div>
+              <label for="tutor">Nome do tutor *</label>
+              <input type="text" id="tutor" maxlength="100" required>
+            </div>
+            <div>
+              <label for="telefone">Telefone *</label>
+              <input type="tel" id="telefone" maxlength="20" placeholder="(11) 90000-0000" required>
+            </div>
+            <div>
+              <label for="email-tutor">E-mail do tutor</label>
+              <input type="email" id="email-tutor" maxlength="100">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="acoes">
+          <button type="submit" class="botao">Salvar</button>
+          <button type="reset" class="botao botao-claro">Limpar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto Integrador · Informática para Internet</p>
+    <p>Integrantes: ________________ e ________________</p>
+  </footer>
+
+</body>
+</html>

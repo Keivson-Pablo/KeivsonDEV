@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório | Amigo Pet</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <p class="marca">🐾 Amigo Pet <span>Sistema de Pet Shop</span></p>
+    <nav aria-label="Menu principal">
+      <a href="cadastro.html">Cadastro</a>
+      <a href="relatorio.html" class="ativo" aria-current="page">Relatório</a>
+      <a href="index.html">Sair</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cartao">
+      <h1>Relatório de animais</h1>
+
+      <fieldset class="filtro-especie">
+        <legend>Filtrar por espécie</legend>
+        <label><input type="radio" name="filtro" id="f-todas" checked> Todas</label>
+        <label><input type="radio" name="filtro" id="f-cachorro"> Cachorro</label>
+        <label><input type="radio" name="filtro" id="f-gato"> Gato</label>
+        <label><input type="radio" name="filtro" id="f-ave"> Ave</label>
+        <label><input type="radio" name="filtro" id="f-coelho"> Coelho</label>
+        <label><input type="radio" name="filtro" id="f-hamster"> Hamster</label>
+      </fieldset>
+
+      <div class="tabela-area">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Espécie</th>
+              <th scope="col">Tutor</th>
+              <th scope="col">Data de cadastro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="cachorro"><td>Thor</td><td>Cachorro</td><td>Mariana Souza</td><td>03/08/2026</td></tr>
+            <tr class="gato"><td>Mia</td><td>Gato</td><td>Carlos Lima</td><td>17/08/2026</td></tr>
+            <tr class="coelho"><td>Pipoca</td><td>Coelho</td><td>Fernanda Alves</td><td>02/09/2026</td></tr>
+            <tr class="ave"><td>Loro</td><td>Ave</td><td>João Pereira</td><td>21/09/2026</td></tr>
+            <tr class="cachorro"><td>Mel</td><td>Cachorro</td><td>Carlos Lima</td><td>05/10/2026</td></tr>
+            <tr class="hamster"><td>Bolota</td><td>Hamster</td><td>Beatriz Rocha</td><td>19/10/2026</td></tr>
+            <tr class="gato"><td>Simba</td><td>Gato</td><td>Mariana Souza</td><td>09/11/2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto Integrador · Informática para Internet</p>
+    <p>Integrantes: ________________ e ________________</p>
+  </footer>
+
+</body>
+</html>

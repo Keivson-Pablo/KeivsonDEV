@@ -1,0 +1,140 @@
+/* ===== Cores do sistema ===== */
+:root {
+  --principal: #0f6e6a;
+  --principal-escuro: #0a504d;
+  --destaque: #f2a541;
+  --fundo: #f3f7f6;
+  --branco: #ffffff;
+  --texto: #1f2d2c;
+  --suave: #5b6b69;
+  --borda: #c9d8d6;
+  --erro: #a62b1f;
+  --sucesso: #1d6b35;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Topo e menu ===== */
+.topo {
+  background: var(--principal);
+  color: var(--branco);
+  border-bottom: 4px solid var(--destaque);
+  padding: 14px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.marca { font-size: 1.4rem; font-weight: bold; }
+.marca span { font-size: 0.85rem; font-weight: normal; margin-left: 8px; }
+nav { display: flex; gap: 6px; }
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+nav a:hover, nav a.ativo { background: var(--principal-escuro); }
+
+/* ===== Conteúdo ===== */
+main { flex: 1; width: 100%; max-width: 900px; margin: 0 auto; padding: 32px 16px; }
+
+.cartao {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 28px;
+}
+.cartao-login { max-width: 400px; margin: 24px auto; }
+h1 { color: var(--principal); font-size: 1.5rem; margin-bottom: 4px; }
+.dica { color: var(--suave); font-size: 0.9rem; margin: 6px 0 16px; }
+
+/* ===== Formulários ===== */
+fieldset { border: 1px solid var(--borda); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+legend { font-weight: bold; color: var(--principal); padding: 0 6px; }
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  column-gap: 16px;
+}
+label { display: block; font-weight: bold; font-size: 0.9rem; margin-bottom: 4px; }
+input, select {
+  width: 100%;
+  height: 42px;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--branco);
+  color: var(--texto);
+}
+input:focus, select:focus, button:focus-visible, a:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 1px;
+}
+input:user-invalid, select:user-invalid { border-color: var(--erro); background: #fdf1ef; }
+
+/* ===== Botões ===== */
+.botao {
+  background: var(--principal);
+  color: var(--branco);
+  border: 2px solid var(--principal);
+  border-radius: 6px;
+  padding: 10px 28px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+.botao:hover { background: var(--principal-escuro); }
+.botao-claro { background: var(--branco); color: var(--principal); }
+.botao-claro:hover { background: var(--fundo); }
+.botao-cheio { width: 100%; }
+.botao-link {
+  display: block;
+  margin: 14px auto 0;
+  width: fit-content;
+  background: none;
+  border: none;
+  color: var(--principal);
+  text-decoration: underline;
+  font: inherit;
+  cursor: pointer;
+}
+.acoes { display: flex; gap: 12px; }
+
+/* ===== Avisos (aparecem quando o link aponta para eles) ===== */
+.aviso { display: none; margin: 12px 0; font-weight: bold; color: var(--sucesso); }
+.aviso:target { display: block; }
+
+/* ===== Relatório ===== */
+.filtro-especie { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; }
+.filtro-especie label { display: flex; align-items: center; gap: 6px; font-weight: normal; margin: 0; cursor: pointer; }
+.filtro-especie input { width: auto; height: auto; margin: 0; accent-color: var(--principal); }
+
+/* Filtro só com CSS: esconde as linhas das outras espécies */
+.cartao:has(#f-cachorro:checked) tbody tr:not(.cachorro),
+.cartao:has(#f-gato:checked) tbody tr:not(.gato),
+.cartao:has(#f-ave:checked) tbody tr:not(.ave),
+.cartao:has(#f-coelho:checked) tbody tr:not(.coelho),
+.cartao:has(#f-hamster:checked) tbody tr:not(.hamster) { display: none; }
+.tabela-area { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid var(--borda); padding: 10px 12px; text-align: left; }
+th { background: var(--principal); color: var(--branco); }
+tbody tr:nth-child(even) { background: var(--fundo); }
+
+/* ===== Rodapé ===== */
+footer { text-align: center; color: var(--suave); font-size: 0.85rem; padding: 16px; }
